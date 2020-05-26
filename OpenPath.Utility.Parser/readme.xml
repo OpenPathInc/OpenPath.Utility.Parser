@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OpenPath.Utility.Parser</name>
+    </assembly>
+    <members>
+        <member name="T:OpenPath.Utility.Parser.CaseParser">
+            <summary>
+            The case parser does different casing options for strings. For example, it can title case,
+            Pascal case and camel.
+            </summary>
+        </member>
+        <member name="M:OpenPath.Utility.Parser.CaseParser.ToJsonCase(System.String)">
+            <summary>
+            Converts a string to format like JSON keys.
+            (Example: This is my text converts to this_is_my_text)
+            </summary>
+            <param name="value">A string</param>
+            <returns>A Json cased string</returns>
+        </member>
+        <member name="T:OpenPath.Utility.Parser.WhitespaceParser">
+            <summary>
+            Extension methods for parsing whitespace from text.
+            </summary>
+        </member>
+        <member name="M:OpenPath.Utility.Parser.WhitespaceParser.RemoveWhitespace(System.String,System.Boolean)">
+            <summary>
+            Removes as types of whitespace in a string.
+            </summary>
+            <param name="text">The string you want to remove whitespace from.</param>
+            <param name="includeSpaceRepresentations">Include representations like '-' and '_'.</param>
+            <returns>A string with no whitespace.</returns>
+        </member>
+    </members>
+</doc>

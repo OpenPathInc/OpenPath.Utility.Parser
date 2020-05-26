@@ -18,18 +18,36 @@
             <param name="value">A string</param>
             <returns>A Json cased string</returns>
         </member>
+        <member name="M:OpenPath.Utility.Parser.CaseParser.ToTitleCase(System.String,System.Boolean,System.String)">
+            <summary>
+            Converts a string to title case.
+            </summary>
+            <param name="value">The value of the string you want to convert to title case.</param>
+            <param name="removeWhitespace">If true, will remove extra whitespace (Default: fault).</param>
+            <param name="culture">Sets the local culture to base the conversion on (Default: "en-US", English).</param>
+            <returns>The string converted to title case.</returns>
+        </member>
         <member name="T:OpenPath.Utility.Parser.WhitespaceParser">
             <summary>
             Extension methods for parsing whitespace from text.
             </summary>
         </member>
+        <member name="M:OpenPath.Utility.Parser.WhitespaceParser.ReplaceWhitespace(System.String,System.String,System.Boolean)">
+            <summary>
+            Replaces all types of whitespace in a string and replaces them with a replacement value.
+            </summary>
+            <param name="value">The string you want to remove and replace whitespace from.</param>
+            <param name="replacementValue">The value you want to replace the whitespace with (Default: " ").</param>
+            <param name="includeSpaceRepresentations">Include representations like '-' and '_' (Default: false).</param>
+            <returns>A string with no whitespace.</returns>
+        </member>
         <member name="M:OpenPath.Utility.Parser.WhitespaceParser.RemoveWhitespace(System.String,System.Boolean)">
             <summary>
-            Removes as types of whitespace in a string.
+            Removes all types of whitespace in a string.
             </summary>
-            <param name="text">The string you want to remove whitespace from.</param>
-            <param name="includeSpaceRepresentations">Include representations like '-' and '_'.</param>
-            <returns>A string with no whitespace.</returns>
+            <param name="value">The string you want to remove whitespace from.</param>
+            <param name="includeSpaceRepresentations">Include representations like '-' and '_' (Default: false).</param>
+            <returns></returns>
         </member>
     </members>
 </doc>

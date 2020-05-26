@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>OpenPath.Utility.Parser</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Jason Martin</Authors>
+    <Company>OpenPath, Inc.</Company>
+    <PackageDescription>This package contains utilities for parsing generic data.</PackageDescription>
+    <RepositoryUrl>https://github.com/OpenPathInc/OpenPath.Utility.Parser</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

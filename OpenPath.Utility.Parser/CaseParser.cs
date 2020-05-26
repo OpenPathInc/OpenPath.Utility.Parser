@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Globalization;
 
 namespace OpenPath.Utility.Parser {
     
@@ -24,7 +25,7 @@ namespace OpenPath.Utility.Parser {
             
             // convert value to jason type vaule
             var result = value
-                .ToHuman()
+                .ToTitleCase()
                 .Replace(" ", "_")
                 .ToLower();
 
@@ -77,37 +78,35 @@ namespace OpenPath.Utility.Parser {
             return result;
         }
 
-        public static string ToHuman(this string text) {
+        /// <summary>
+        /// Converts a string to title case.
+        /// </summary>
+        /// <param name="value">The value of the string you want to convert to title case.</param>
+        /// <param name="removeWhitespace">If true, will remove extra whitespace (Default: fault).</param>
+        /// <param name="culture">Sets the local culture to base the conversion on (Default: "en-US", English).</param>
+        /// <returns>The string converted to title case.</returns>
+        public static string ToTitleCase(
+            this string value,
+            bool removeWhitespace = false,
+            string culture = "en-US"
+        ) {
 
             // validate
-            if (text == null) return text;
-            if (text.Length < 2) return text.ToUpper();
+            if (value == null) return value;
 
-            // clean whitespace and other characters
-            text = text
-                .RemoveWhitespace()
-                .Replace("--", "-");
+            // set defult variables
+            var textInfo = new CultureInfo(culture, false).TextInfo;
 
-            // set pre-conditions
-            var dontSkip = true;
-            var spaceCharacters = new char[] { '-', '.', '_', ':' };
-
-            // start with the first character.
-            var result = text.Substring(0, 1).ToUpper();
-
-            // Add the remaining characters.
-            for (int i = 1; i < text.Length; i++) {
-                if (dontSkip) { 
-                    if (char.IsUpper(text[i])) result += " " + text[i];
-                    else if (spaceCharacters.Contains(text[i])) { result += " " + text[i + 1].ToString().ToUpper(); dontSkip = false; }
-                    else result += text[i];
-                }
-                else {
-                    dontSkip = true;
-                }
+            // remove whitespace if specified
+            if(removeWhitespace) {
+                value = value.ReplaceWhitespace();
             }
 
-            return result.RemoveWhitespace();
+            // convert to title case
+            var result = textInfo.ToTitleCase(value.ToLower()); 
+
+            return result;
+
         }
 
 

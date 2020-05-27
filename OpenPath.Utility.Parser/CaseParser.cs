@@ -79,7 +79,7 @@ namespace OpenPath.Utility.Parser {
         }
 
         /// <summary>
-        /// Converts a string to title case.
+        /// Converts a string to title case, captilizing every first word in string.
         /// </summary>
         /// <param name="value">The value of the string you want to convert to title case.</param>
         /// <param name="removeWhitespace">If true, will remove extra whitespace (Default: fault).</param>
@@ -109,7 +109,44 @@ namespace OpenPath.Utility.Parser {
 
         }
 
+        /// <summary>
+        /// Converts a string to title case, captilizing the proper words in string.
+        /// </summary>
+        /// <param name="value">The value of the string you want to convert to title case.</param>
+        /// <param name="removeWhitespace">If true, will remove extra whitespace (Default: fault).</param>
+        /// <param name="culture">Sets the local culture to base the conversion on (Default: "en-US", English).</param>
+        /// <returns>The string converted to title case.</returns>
+        public static string ToProperTitleCase(
+            this string value,
+            bool removeWhitespace = false,
+            string culture = "en-US"
+        ) {
 
+            // validate
+            if (value == null) return value;
+
+            // first title case
+            var result = value.ToTitleCase(removeWhitespace, culture);
+
+            // build new proper case
+            result = result
+                .Replace(" And ", " and ")
+                .Replace(" Or ", " or ")
+                .Replace(" A ", " a ")
+                .Replace(" The ", " the ")
+                .Replace(" An ", " an ")
+                .Replace(" For ", " for ")
+                .Replace(" But ", " but ")
+                .Replace(" At ", " at ")
+                .Replace(" By ", " by ")
+                .Replace(" To ", " To ");
+
+            // TODO: Add abbrivations to proper title case.
+
+            // retrun result
+            return result;
+
+        }
 
 
     }

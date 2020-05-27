@@ -10,14 +10,6 @@
             Pascal case and camel.
             </summary>
         </member>
-        <member name="M:OpenPath.Utility.Parser.CaseParser.ToJsonCase(System.String)">
-            <summary>
-            Converts a string to format like JSON keys.
-            (Example: This is my text converts to this_is_my_text)
-            </summary>
-            <param name="value">A string</param>
-            <returns>A Json cased string</returns>
-        </member>
         <member name="M:OpenPath.Utility.Parser.CaseParser.ToTitleCase(System.String,System.Boolean,System.String)">
             <summary>
             Converts a string to title case, captilizing every first word in string.
@@ -29,12 +21,57 @@
         </member>
         <member name="M:OpenPath.Utility.Parser.CaseParser.ToProperTitleCase(System.String,System.Boolean,System.String)">
             <summary>
-            Converts a string to title case, captilizing the proper words in string.
+            Converts a string to title case, captilizing words over three characters and I.
             </summary>
             <param name="value">The value of the string you want to convert to title case.</param>
             <param name="removeWhitespace">If true, will remove extra whitespace (Default: fault).</param>
             <param name="culture">Sets the local culture to base the conversion on (Default: "en-US", English).</param>
             <returns>The string converted to title case.</returns>
+        </member>
+        <member name="M:OpenPath.Utility.Parser.CaseParser.ToPascalCase(System.String)">
+            <summary>
+            Converts a string to a valid Pascal Cased code representation.
+            </summary>
+            <param name="value">The string to convert to Pascal Case.</param>
+            <returns>Returns string as Pascal Case.</returns>
+        </member>
+        <member name="M:OpenPath.Utility.Parser.CaseParser.ToJsonCase(System.String)">
+            <summary>
+            Converts a string to format like JSON keys.
+            (Example: This is my text converts to this_is_my_text)
+            </summary>
+            <param name="value">A string</param>
+            <returns>A Json cased string</returns>
+        </member>
+        <member name="T:OpenPath.Utility.Parser.CharacterParser">
+            <summary>
+            The CharacterParser contains extension methods for manipluating the characters in a string,
+            such as removing all numbers or letters or punctuation from a string.
+            </summary>
+        </member>
+        <member name="M:OpenPath.Utility.Parser.CharacterParser.ToLetters(System.String,System.Boolean)">
+            <summary>
+            Removes all puctuation and numbers from a string.
+            </summary>
+            <param name="value">String to remove numbers and puctuation from.</param>
+            <param name="removeSpaces">Remove whitespace from result.</param>
+            <returns>Returns letters only.</returns>
+        </member>
+        <member name="M:OpenPath.Utility.Parser.CharacterParser.ToNumbers(System.String,System.Boolean)">
+            <summary>
+            Removes all puctuation and letters from a string.
+            </summary>
+            <param name="value">String to remove letters and puctuation from.</param>
+            /// <param name="removeSpaces">Remove whitespace from result.</param>
+            <returns>Returns numbers only.</returns>
+        </member>
+        <member name="M:OpenPath.Utility.Parser.CharacterParser.ToLettersAndNumbers(System.String,System.Boolean)">
+            <summary>
+            Removes all puctuation from a string.
+            </summary>
+            <param name="value">String to puctuation from.</param>
+            <param name="removeSpaces">Remove whitespace from result.</param>
+            <returns>Returns letters numbers only.</returns>
         </member>
         <member name="T:OpenPath.Utility.Parser.WhitespaceParser">
             <summary>

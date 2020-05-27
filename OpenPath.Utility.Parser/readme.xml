@@ -20,7 +20,16 @@
         </member>
         <member name="M:OpenPath.Utility.Parser.CaseParser.ToTitleCase(System.String,System.Boolean,System.String)">
             <summary>
-            Converts a string to title case.
+            Converts a string to title case, captilizing every first word in string.
+            </summary>
+            <param name="value">The value of the string you want to convert to title case.</param>
+            <param name="removeWhitespace">If true, will remove extra whitespace (Default: fault).</param>
+            <param name="culture">Sets the local culture to base the conversion on (Default: "en-US", English).</param>
+            <returns>The string converted to title case.</returns>
+        </member>
+        <member name="M:OpenPath.Utility.Parser.CaseParser.ToProperTitleCase(System.String,System.Boolean,System.String)">
+            <summary>
+            Converts a string to title case, captilizing the proper words in string.
             </summary>
             <param name="value">The value of the string you want to convert to title case.</param>
             <param name="removeWhitespace">If true, will remove extra whitespace (Default: fault).</param>

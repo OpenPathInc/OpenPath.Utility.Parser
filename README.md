@@ -5,6 +5,7 @@
 
 - [CaseParser](#T-OpenPath-Utility-Parser-CaseParser 'OpenPath.Utility.Parser.CaseParser')
   - [ToJsonCase(value)](#M-OpenPath-Utility-Parser-CaseParser-ToJsonCase-System-String- 'OpenPath.Utility.Parser.CaseParser.ToJsonCase(System.String)')
+  - [ToProperTitleCase(value,removeWhitespace,culture)](#M-OpenPath-Utility-Parser-CaseParser-ToProperTitleCase-System-String,System-Boolean,System-String- 'OpenPath.Utility.Parser.CaseParser.ToProperTitleCase(System.String,System.Boolean,System.String)')
   - [ToTitleCase(value,removeWhitespace,culture)](#M-OpenPath-Utility-Parser-CaseParser-ToTitleCase-System-String,System-Boolean,System-String- 'OpenPath.Utility.Parser.CaseParser.ToTitleCase(System.String,System.Boolean,System.String)')
 - [WhitespaceParser](#T-OpenPath-Utility-Parser-WhitespaceParser 'OpenPath.Utility.Parser.WhitespaceParser')
   - [RemoveWhitespace(value,includeSpaceRepresentations)](#M-OpenPath-Utility-Parser-WhitespaceParser-RemoveWhitespace-System-String,System-Boolean- 'OpenPath.Utility.Parser.WhitespaceParser.RemoveWhitespace(System.String,System.Boolean)')
@@ -40,12 +41,31 @@ A Json cased string
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | A string |
 
+<a name='M-OpenPath-Utility-Parser-CaseParser-ToProperTitleCase-System-String,System-Boolean,System-String-'></a>
+### ToProperTitleCase(value,removeWhitespace,culture) `method`
+
+##### Summary
+
+Converts a string to title case, captilizing the proper words in string.
+
+##### Returns
+
+The string converted to title case.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The value of the string you want to convert to title case. |
+| removeWhitespace | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | If true, will remove extra whitespace (Default: fault). |
+| culture | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Sets the local culture to base the conversion on (Default: "en-US", English). |
+
 <a name='M-OpenPath-Utility-Parser-CaseParser-ToTitleCase-System-String,System-Boolean,System-String-'></a>
 ### ToTitleCase(value,removeWhitespace,culture) `method`
 
 ##### Summary
 
-Converts a string to title case.
+Converts a string to title case, captilizing every first word in string.
 
 ##### Returns
 

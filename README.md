@@ -7,6 +7,7 @@
   - [ToJsonCase(value)](#M-OpenPath-Utility-Parser-CaseParser-ToJsonCase-System-String- 'OpenPath.Utility.Parser.CaseParser.ToJsonCase(System.String)')
   - [ToPascalCase(value)](#M-OpenPath-Utility-Parser-CaseParser-ToPascalCase-System-String- 'OpenPath.Utility.Parser.CaseParser.ToPascalCase(System.String)')
   - [ToProperTitleCase(value,removeWhitespace,culture)](#M-OpenPath-Utility-Parser-CaseParser-ToProperTitleCase-System-String,System-Boolean,System-String- 'OpenPath.Utility.Parser.CaseParser.ToProperTitleCase(System.String,System.Boolean,System.String)')
+  - [ToSentenceCase(value,acceptNamespaceCase)](#M-OpenPath-Utility-Parser-CaseParser-ToSentenceCase-System-String,System-Boolean- 'OpenPath.Utility.Parser.CaseParser.ToSentenceCase(System.String,System.Boolean)')
   - [ToTitleCase(value,removeWhitespace,culture)](#M-OpenPath-Utility-Parser-CaseParser-ToTitleCase-System-String,System-Boolean,System-String- 'OpenPath.Utility.Parser.CaseParser.ToTitleCase(System.String,System.Boolean,System.String)')
 - [CharacterParser](#T-OpenPath-Utility-Parser-CharacterParser 'OpenPath.Utility.Parser.CharacterParser')
   - [ToLetters(value,removeSpaces)](#M-OpenPath-Utility-Parser-CharacterParser-ToLetters-System-String,System-Boolean- 'OpenPath.Utility.Parser.CharacterParser.ToLetters(System.String,System.Boolean)')
@@ -81,6 +82,25 @@ The string converted to title case.
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The value of the string you want to convert to title case. |
 | removeWhitespace | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | If true, will remove extra whitespace (Default: fault). |
 | culture | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Sets the local culture to base the conversion on (Default: "en-US", English). |
+
+<a name='M-OpenPath-Utility-Parser-CaseParser-ToSentenceCase-System-String,System-Boolean-'></a>
+### ToSentenceCase(value,acceptNamespaceCase) `method`
+
+##### Summary
+
+Converts a string with no spaces to a sentence styled case. For example: PascalCase
+would return Pascal case and javascript_notation would return Javascript notation.
+
+##### Returns
+
+A sentence cased string.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The string you want to sentence case. |
+| acceptNamespaceCase | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | If set to true will replace '.' with spaces (Default: False). |
 
 <a name='M-OpenPath-Utility-Parser-CaseParser-ToTitleCase-System-String,System-Boolean,System-String-'></a>
 ### ToTitleCase(value,removeWhitespace,culture) `method`

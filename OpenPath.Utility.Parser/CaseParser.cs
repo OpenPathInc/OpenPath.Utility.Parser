@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace OpenPath.Utility.Parser {
     
@@ -143,7 +144,7 @@ namespace OpenPath.Utility.Parser {
         public static string ToJsonCase(this string value) {
 
             // validate
-            if(value == null) return null;
+            if(value == null) return value;
             
             // convert value to jason type vaule
             var result = value
@@ -175,6 +176,40 @@ namespace OpenPath.Utility.Parser {
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// Converts a string with no spaces to a sentence styled case. For example: PascalCase
+        /// would return Pascal case and javascript_notation would return Javascript notation.
+        /// </summary>
+        /// <param name="value">The string you want to sentence case.</param>
+        /// <param name="acceptNamespaceCase">If set to true will replace '.' with spaces (Default: False).</param>
+        /// <returns>A sentence cased string.</returns>
+        public static string ToSentenceCase(this string value, bool acceptNamespaceCase = false) {
+
+            // validate
+            if(value == null) return value;
+
+            // define variables
+            var result = string.Empty;
+
+            // remove whitespace
+            result = value.ReplaceWhitespace(" ", true);
+
+            // if accept namespace cased remove '.' characters
+            if(acceptNamespaceCase) result = result.Replace(".", " ");
+
+            // upper case the first character
+            if(result.Length > 0) result = $"{result.Substring(0, 1).ToUpper()}{result.Substring(1)}";
+
+            // add spaces via regular expressions
+            result = Regex.Replace(result, "[a-z][A-Z]", m => $"{m.Value[0]} {char.ToLower(m.Value[1])}");
+
+            // make sure the sentence starts with uppercase and the test is lower case
+            if(result.Length > 0) result = $"{result.Substring(0, 1).ToUpper()}{result.Substring(1).ToLower()}";
+
+            return result;
+
         }
 
     }

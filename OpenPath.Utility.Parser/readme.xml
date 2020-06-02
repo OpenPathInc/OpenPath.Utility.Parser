@@ -43,6 +43,15 @@
             <param name="value">A string</param>
             <returns>A Json cased string</returns>
         </member>
+        <member name="M:OpenPath.Utility.Parser.CaseParser.ToSentenceCase(System.String,System.Boolean)">
+            <summary>
+            Converts a string with no spaces to a sentence styled case. For example: PascalCase
+            would return Pascal case and javascript_notation would return Javascript notation.
+            </summary>
+            <param name="value">The string you want to sentence case.</param>
+            <param name="acceptNamespaceCase">If set to true will replace '.' with spaces (Default: False).</param>
+            <returns>A sentence cased string.</returns>
+        </member>
         <member name="T:OpenPath.Utility.Parser.CharacterParser">
             <summary>
             The CharacterParser contains extension methods for manipluating the characters in a string,

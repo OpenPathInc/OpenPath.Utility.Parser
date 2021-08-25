@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>OpenPath.Utility.Parser</PackageId>
-    <Version>1.0.2</Version>
+    <Version>2.0.0</Version>
     <Authors>Jason Martin</Authors>
     <Company>OpenPath, Inc.</Company>
     <PackageDescription>This package contains utilities for parsing generic data.</PackageDescription>
@@ -12,7 +12,10 @@
     <Copyright>2020</Copyright>
     <PackageIcon>openpath.png</PackageIcon>
     <PackageProjectUrl>https://github.com/OpenPathInc/OpenPath.Utility.Parser</PackageProjectUrl>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <AssemblyName>OP-ParserUtility</AssemblyName>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
+    <FileVersion>2.1.0.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

@@ -1,5 +1,5 @@
 <a name='assembly'></a>
-# OpenPath.Utility.Parser
+# OP-ParserUtility
 
 ## Contents
 

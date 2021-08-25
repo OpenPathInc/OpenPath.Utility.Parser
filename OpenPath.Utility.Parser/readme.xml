@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>OpenPath.Utility.Parser</name>
+        <name>OP-ParserUtility</name>
     </assembly>
     <members>
         <member name="T:OpenPath.Utility.Parser.CaseParser">

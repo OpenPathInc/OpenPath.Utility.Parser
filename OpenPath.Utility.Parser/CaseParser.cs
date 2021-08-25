@@ -156,6 +156,27 @@ namespace OpenPath.Utility.Parser {
 
         }
 
+        /// <summary>
+        /// Converts a string to format like JSON keys.
+        /// (Example: This is my text converts to this_is_my_text)
+        /// </summary>
+        /// <param name="value">A string</param>
+        /// <returns>A Json cased string</returns>
+        public static string ToHtmlCase(this string value) {
+
+            // validate
+            if(value == null) return value;
+            
+            // convert value to jason type vaule
+            var result = value
+                .ToTitleCase()
+                .Replace(" ", "-")
+                .ToLower();
+
+            return result;
+
+        }
+
         public static string ToCamelCase(this string value)
         {
             // validate

@@ -148,6 +148,7 @@ namespace OpenPath.Utility.Parser {
             
             // convert value to jason type vaule
             var result = value
+                .ToLettersAndNumbers()
                 .ToTitleCase()
                 .Replace(" ", "_")
                 .ToLower();
@@ -157,18 +158,19 @@ namespace OpenPath.Utility.Parser {
         }
 
         /// <summary>
-        /// Converts a string to format like JSON keys.
-        /// (Example: This is my text converts to this_is_my_text)
+        /// Converts a string to format like url links.
+        /// (Example: This is my text converts to this-is-my-text)
         /// </summary>
         /// <param name="value">A string</param>
-        /// <returns>A Json cased string</returns>
-        public static string ToHtmlCase(this string value) {
+        /// <returns>A JSON cased string</returns>
+        public static string ToUrlCase(this string value) {
 
             // validate
             if(value == null) return value;
             
             // convert value to jason type vaule
             var result = value
+                .ToLettersAndNumbers()
                 .ToTitleCase()
                 .Replace(" ", "-")
                 .ToLower();
@@ -177,6 +179,12 @@ namespace OpenPath.Utility.Parser {
 
         }
 
+        /// <summary>
+        /// The first letter of each word in a compound word is capitalized, except for the first
+        /// word.
+        /// </summary>
+        /// <param name="value">A string</param>
+        /// <returns>A camel cased string</returns>
         public static string ToCamelCase(this string value)
         {
             // validate

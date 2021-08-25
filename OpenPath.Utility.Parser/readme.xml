@@ -43,6 +43,22 @@
             <param name="value">A string</param>
             <returns>A Json cased string</returns>
         </member>
+        <member name="M:OpenPath.Utility.Parser.CaseParser.ToUrlCase(System.String)">
+            <summary>
+            Converts a string to format like url links.
+            (Example: This is my text converts to this-is-my-text)
+            </summary>
+            <param name="value">A string</param>
+            <returns>A JSON cased string</returns>
+        </member>
+        <member name="M:OpenPath.Utility.Parser.CaseParser.ToCamelCase(System.String)">
+            <summary>
+            The first letter of each word in a compound word is capitalized, except for the first
+            word.
+            </summary>
+            <param name="value">A string</param>
+            <returns>A camel cased string</returns>
+        </member>
         <member name="M:OpenPath.Utility.Parser.CaseParser.ToSentenceCase(System.String,System.Boolean)">
             <summary>
             Converts a string with no spaces to a sentence styled case. For example: PascalCase

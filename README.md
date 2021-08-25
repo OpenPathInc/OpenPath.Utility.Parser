@@ -4,11 +4,13 @@
 ## Contents
 
 - [CaseParser](#T-OpenPath-Utility-Parser-CaseParser 'OpenPath.Utility.Parser.CaseParser')
+  - [ToCamelCase(value)](#M-OpenPath-Utility-Parser-CaseParser-ToCamelCase-System-String- 'OpenPath.Utility.Parser.CaseParser.ToCamelCase(System.String)')
   - [ToJsonCase(value)](#M-OpenPath-Utility-Parser-CaseParser-ToJsonCase-System-String- 'OpenPath.Utility.Parser.CaseParser.ToJsonCase(System.String)')
   - [ToPascalCase(value)](#M-OpenPath-Utility-Parser-CaseParser-ToPascalCase-System-String- 'OpenPath.Utility.Parser.CaseParser.ToPascalCase(System.String)')
   - [ToProperTitleCase(value,removeWhitespace,culture)](#M-OpenPath-Utility-Parser-CaseParser-ToProperTitleCase-System-String,System-Boolean,System-String- 'OpenPath.Utility.Parser.CaseParser.ToProperTitleCase(System.String,System.Boolean,System.String)')
   - [ToSentenceCase(value,acceptNamespaceCase)](#M-OpenPath-Utility-Parser-CaseParser-ToSentenceCase-System-String,System-Boolean- 'OpenPath.Utility.Parser.CaseParser.ToSentenceCase(System.String,System.Boolean)')
   - [ToTitleCase(value,removeWhitespace,culture)](#M-OpenPath-Utility-Parser-CaseParser-ToTitleCase-System-String,System-Boolean,System-String- 'OpenPath.Utility.Parser.CaseParser.ToTitleCase(System.String,System.Boolean,System.String)')
+  - [ToUrlCase(value)](#M-OpenPath-Utility-Parser-CaseParser-ToUrlCase-System-String- 'OpenPath.Utility.Parser.CaseParser.ToUrlCase(System.String)')
 - [CharacterParser](#T-OpenPath-Utility-Parser-CharacterParser 'OpenPath.Utility.Parser.CharacterParser')
   - [ToLetters(value,removeSpaces)](#M-OpenPath-Utility-Parser-CharacterParser-ToLetters-System-String,System-Boolean- 'OpenPath.Utility.Parser.CharacterParser.ToLetters(System.String,System.Boolean)')
   - [ToLettersAndNumbers(value,removeSpaces)](#M-OpenPath-Utility-Parser-CharacterParser-ToLettersAndNumbers-System-String,System-Boolean- 'OpenPath.Utility.Parser.CharacterParser.ToLettersAndNumbers(System.String,System.Boolean)')
@@ -28,6 +30,24 @@ OpenPath.Utility.Parser
 
 The case parser does different casing options for strings. For example, it can title case,
 Pascal case and camel.
+
+<a name='M-OpenPath-Utility-Parser-CaseParser-ToCamelCase-System-String-'></a>
+### ToCamelCase(value) `method`
+
+##### Summary
+
+The first letter of each word in a compound word is capitalized, except for the first
+word.
+
+##### Returns
+
+A camel cased string
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | A string |
 
 <a name='M-OpenPath-Utility-Parser-CaseParser-ToJsonCase-System-String-'></a>
 ### ToJsonCase(value) `method`
@@ -120,6 +140,24 @@ The string converted to title case.
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The value of the string you want to convert to title case. |
 | removeWhitespace | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | If true, will remove extra whitespace (Default: fault). |
 | culture | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Sets the local culture to base the conversion on (Default: "en-US", English). |
+
+<a name='M-OpenPath-Utility-Parser-CaseParser-ToUrlCase-System-String-'></a>
+### ToUrlCase(value) `method`
+
+##### Summary
+
+Converts a string to format like url links.
+(Example: This is my text converts to this-is-my-text)
+
+##### Returns
+
+A JSON cased string
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | A string |
 
 <a name='T-OpenPath-Utility-Parser-CharacterParser'></a>
 ## CharacterParser `type`
